@@ -28,14 +28,14 @@ Route::get('/', function () {
 	Route::get('logout', 'AdminController@logout');
 	//-------------------------------categories----------------------------------
 	Route::match(['get', 'post'],'admin/add-category', 'category_controller@add_category');
+	Route::match(['get', 'post'],'admin/view-category', 'category_controller@view_category');
 	Route::match(['get', 'post'],'admin/edit-category/{id}', 'category_controller@edit_category');
 	Route::match(['get', 'post'],'admin/delete-category/{id}', 'category_controller@delete_category');
-	Route::match(['get', 'post'],'admin/view-category', 'category_controller@view_category');
 	//-------------------------------products----------------------------------
 	Route::match(['get', 'post'],'admin/add-products', 'ProductsController@addProduct');
 	Route::match(['get', 'post'],'admin/view-products', 'ProductsController@viewProduct');
-
-
+	Route::match(['get', 'post'],'admin/edit-products/{id}', 'ProductsController@editProduct');
+	Route::match(['get', 'post'],'admin/delete-products/{id}', 'ProductsController@deleteProduct');
 
 	//-----------------------------------------------------------------
 

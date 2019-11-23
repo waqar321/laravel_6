@@ -40,6 +40,8 @@
 <script src="{{ URL('js/backend_js/matrix.tables.js') }}"></script>
 <script src="{{ URL('js/backend_js/matrix.popover.js') }}"></script>
 <script src="{{ URL('js/backend_js/sweetalert.min.js') }}"></script>
+<script src="{{ URL('js/backend_js/matrix.popover.js') }}"></script>
+
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     
