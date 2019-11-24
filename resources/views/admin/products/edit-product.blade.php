@@ -68,7 +68,10 @@
                 <div class="controls">
                   <input type="file" name="product_image" id="product_image">
                   <input type="hidden" name="current_image" id="current_image" value="{{$productDetail->image}}">
+                  @if(!empty($productDetail->image))
                   <img style="width: 30px;" src="{{ URL('images/backend_images/products/small/'.$productDetail->image) }}">
+                  <a id="delProduct" href="{{ URL('admin/delete-productsImage/'.$productDetail->id) }}">Delete </a>
+                @endif
                 </div>
               </div>   
                    	
@@ -84,5 +87,6 @@
 
   </div>
 </div>
+
 
 @endsection

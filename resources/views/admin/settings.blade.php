@@ -34,7 +34,7 @@
                   <div class="controls">
                     <input type="password" name="current_pwd" id="current_pwd" />
                     <span id="chkPwd"></span>
-                  </div>       
+                  </div>    
                 </div>
                 <div class="control-group">
                   <label class="control-label">New Password</label>

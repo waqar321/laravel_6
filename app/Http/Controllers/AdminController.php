@@ -34,22 +34,16 @@ class AdminController extends Controller{
 	
 	public function chkPassword(Request $request){
 
-		echo "its working";
-        $data = $request->all();
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>"; die;
-        
-        $current_password = $data['current_pwd1'];
-        $user_data = User::where(['admin'=>'1'])->first();
-
-        echo "Current password 		".current_password."<br>"."Database Password       ".$user_data->password; die;
-
-        if(Hash::check($current_password,$user_data->password)){
-            echo "true"; die;
-        }else {
-            echo "false"; die;
-        }
+			$data = $request->all();
+        //echo "<pre>"; print_r($data); die;
+        $adminCount = Admin::where(['username' => Session::get('adminSession'),'password'=>md5($data['current_pwd'])])->count(); 
+            if ($adminCount == 1) {
+                //echo '{"valid":true}';die;
+                echo "true"; die;
+            } else {
+                //echo '{"valid":false}';die;
+                echo "false"; die;
+            }
 	}
 	public function dashboard(){
 		// if(Session::has('adminSession')){

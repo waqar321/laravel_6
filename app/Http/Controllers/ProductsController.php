@@ -125,8 +125,6 @@ class Productscontroller extends Controller
 												]);
 		   	    	return redirect('admin/view-products')->with('status', "Product has been Updated successfully, new Image is added");
 		   	    }else{
-
-		   	    	; 
         	    	Product::where(['id'=>$id])->update([
 													'category_id'=>$data['category_id'], 
 													'product_name'=>$data['product_name'],
@@ -173,6 +171,7 @@ class Productscontroller extends Controller
     }
     public function viewProduct(Request $request){
     	$products = Product::get();
+    	
     	foreach($products as $key => $val){
     		// $key means 0 1 2 3 4 5....9
     		// $val means puri row uthao
@@ -182,9 +181,15 @@ class Productscontroller extends Controller
 		}
 		return view('admin.products.view-product')->with(compact('products')); 
     } 
+    public function deleteProductImage(Request $request, $id=null){
+    		Product::where(['id'=>$id])->update(['image'=>'']);
+    		return redirect()->back()->with('status', 'Product Is Deleted!!');
+    }
     public function deleteProduct(Request $request, $id=null){
-
-    		return "deleteProduct is working"; die;
+    		if(!empty($id)){
+				Product::where(['id'=>$id])->delete();
+				return redirect()->back()->with('status', 'Product has been deleted successfully');
+			}
     }
      
 }

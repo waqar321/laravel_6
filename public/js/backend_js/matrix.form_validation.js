@@ -1,11 +1,10 @@
 
 $(document).ready(function(){
-	
-	/*$("#current_pwd").keyup(function(){
+	$("#current_pwd").keyup(function(){
 		var current_pwd = $("#current_pwd").val();
 		$.ajax({
 			type:'get',
-			url:'/admin/check-pwd',
+			url:'admin/check-pwd',
 			data:{current_pwd:current_pwd},
 			success:function(resp){
 				if(resp=="false"){
@@ -17,48 +16,14 @@ $(document).ready(function(){
 				alert("Error");
 			}
 		});
-	});*/
-
+	});
 	
 	$('input[type=checkbox],input[type=radio],input[type=file]').uniform();
+
+	/*$('select').select2();*/
 	
-	$('select').select2();
-	
-	
-	// ===================product================
-	      
-    $("#edit_product").validate({
-		rules:{
-			category_id:{	
-				required:true
-			},
-			product_name:{
-				required:true
-			},
-			product_code:{
-				required:true
-			},
-			product_color:{
-				required:true
-			},
-			description:{
-				required:true
-			},
-			product_price:{
-				required:true
-			}
-		},
-		errorClass: "help-inline",
-		errorElement: "span",
-		highlight:function(element, errorClass, validClass) {
-			$(element).parents('.control-group').addClass('error');
-		},
-		unhighlight: function(element, errorClass, validClass) {
-			$(element).parents('.control-group').removeClass('error');
-			$(element).parents('.control-group').addClass('success');
-		}
-	});
-   $("#basic_validate").validate({
+	// Form Validation
+    $("#basic_validate").validate({
 		rules:{
 			required:{
 				required:true
@@ -87,10 +52,10 @@ $(document).ready(function(){
 		}
 	});
 
-	// Add Category Validation
-   $("#add_category").validate({
+    // Category Validation  /working
+	$("#add_category").validate({
 		rules:{
-			category_name:{	
+			category_name:{
 				required:true
 			},
 			description:{
@@ -111,9 +76,47 @@ $(document).ready(function(){
 		}
 	});
 
+	// Product Validation  /working
 	$("#add_product").validate({
 		rules:{
-			product_name:{	
+			category_id:{
+				required:true
+			},
+			product_name:{
+				required:true
+			},
+			product_code:{
+				required:true
+			},
+			product_color:{
+				required:true
+			},
+			description:{
+				required:true
+			},
+			product_price:{
+				required:true,
+				number:true
+			}
+		},
+		errorClass: "help-inline",
+		errorElement: "span",
+		highlight:function(element, errorClass, validClass) {
+			$(element).parents('.control-group').addClass('error');
+		},
+		unhighlight: function(element, errorClass, validClass) {
+			$(element).parents('.control-group').removeClass('error');
+			$(element).parents('.control-group').addClass('success');
+		}
+	});
+
+	// Product Validation  /working
+	$("#edit_product").validate({
+		rules:{
+			category_id:{
+				required:true
+			},
+			product_name:{
 				required:true
 			},
 			product_code:{
@@ -127,9 +130,7 @@ $(document).ready(function(){
 			},
 			product_price:{
 				required:true
-			},
-			
-			 //      
+			}
 		},
 		errorClass: "help-inline",
 		errorElement: "span",
@@ -141,7 +142,7 @@ $(document).ready(function(){
 			$(element).parents('.control-group').addClass('success');
 		}
 	});
-
+	
 	$("#number_validate").validate({
 		rules:{
 			min:{
@@ -167,8 +168,8 @@ $(document).ready(function(){
 			$(element).parents('.control-group').addClass('success');
 		}
 	});
-
 	
+	// Password Validation  /working
 	$("#password_validate").validate({
 		rules:{
 			current_pwd:{
@@ -198,4 +199,55 @@ $(document).ready(function(){
 			$(element).parents('.control-group').addClass('success');
 		}
 	});
+
+	/*$("#delCat").click(function(){
+		if(confirm('Are you sure to delete the Category?')){
+            return true;
+        }
+        return false;
+	});*/
+
+/*	$("#delProduct1").click(function(){
+		if(confirm('Are you sure to delete the Product?')){
+            return true;
+        }
+        return false;
+	});
+*/
+	$(document).on('click','.deleteRecord',function(e){
+        var id = $(this).attr('rel');
+        var deleteFunction = $(this).attr('rel1');
+        swal({
+          title: "Are you sure?",
+          text: "Your will not be able to recover this Record Again!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonClass: "btn-danger",
+          confirmButtonText: "Yes, delete it!",
+          closeOnConfirm: false
+        },
+        function(){
+            window.location.href="/admin/"+deleteFunction+"/"+id;
+        });
+    });
+
+    $(document).ready(function(){
+	    var maxField = 10; //Input fields increment limitation
+	    var addButton = $('.add_button'); //Add button selector
+	    var wrapper = $('.field_wrapper'); //Input field wrapper
+	    var fieldHTML = '<div class="controls field_wrapper" style="margin-left:-2px;"><input type="text" name="sku[]" style="width:120px"/>&nbsp;<input type="text" name="size[]" style="width:120px"/>&nbsp;<input type="text" name="price[]" style="width:120px"/>&nbsp;<input type="text" name="stock[]" style="width:120px"/><a href="javascript:void(0);" class="remove_button" title="Remove field">Remove</a></div>'; //New input field html 
+	    var x = 1; //Initial field counter is 1
+	    $(addButton).click(function(){ //Once add button is clicked
+	        if(x < maxField){ //Check maximum number of input fields
+	            x++; //Increment field counter
+	            $(wrapper).append(fieldHTML); // Add field html
+	        }
+	    });
+	    $(wrapper).on('click', '.remove_button', function(e){ //Once remove button is clicked
+	        e.preventDefault();
+	        $(this).parent('div').remove(); //Remove field html
+	        x--; //Decrement field counter
+	    });
+	});
+
 });

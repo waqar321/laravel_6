@@ -60,14 +60,5 @@
     </div>
   </div>
 </div>
-<script>  
-$('#delCat').click(function(){
-  alert('testing');
-  if(confirm('Are you sure you want to delte this category-??')){
-        return true;
-  }
-  return false;
-});
 
-</script>
 @endsection

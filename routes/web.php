@@ -16,11 +16,9 @@ Route::get('/', function () {
 });
 
 	
-
-
-
- 
-	Route::get('admin/check-pwd', 'AdminController@chkPassword');
+	Route::match(['get', 'post'],'admin/check-pwd', 'AdminController@chkPassword');
+	Route::match(['get', 'post'],'admin/update-pwd', 'AdminController@UpdatePassword');
+	
 	//-------------------------------Login----------------------------------
 	Route::match(['get', 'post'],'admin', 'AdminController@login');
 	Route::get('admin/dashboard', 'AdminController@dashboard');
@@ -35,6 +33,7 @@ Route::get('/', function () {
 	Route::match(['get', 'post'],'admin/add-products', 'ProductsController@addProduct');
 	Route::match(['get', 'post'],'admin/view-products', 'ProductsController@viewProduct');
 	Route::match(['get', 'post'],'admin/edit-products/{id}', 'ProductsController@editProduct');
+	Route::match(['get', 'post'],'admin/delete-productsImage/{id}', 'ProductsController@deleteProductImage');
 	Route::match(['get', 'post'],'admin/delete-products/{id}', 'ProductsController@deleteProduct');
 
 	//-----------------------------------------------------------------
