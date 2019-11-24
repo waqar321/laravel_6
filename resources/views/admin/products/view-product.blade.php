@@ -58,7 +58,7 @@
                   <td class="center">
                     <a href="#myModal{{ $Product->id }}" data-toggle="modal" class="btn btn-success btn-mini">View</a>
                     <a id="delProduct" href="{{ url('admin/edit-products/'.$Product->id) }}" class="btn btn-primary btn-mini">Edit</a> 
-                    <a id="delProduct1" rel="{{ $Product->id }}" rel1="delete-product" href="javascript:" href="{{ url('admin/delete-products/'.$Product->id) }}" class="btn btn-danger btn-mini deleteRecord">Delete</a> </td>
+                     <a id="delProduct1" rel="{{ $Product->id }}" rel1="delete-product" href="javascript:" href="{{ url('admin/delete-products/'.$Product->id) }}" class="btn btn-danger btn-mini deleteRecord">Delete</a> </td>
                   </td>
                 </tr>
                     <div id="myModal{{ $Product->id }}" class="modal hide">

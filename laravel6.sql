@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2019 at 05:23 AM
+-- Generation Time: Nov 25, 2019 at 12:28 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -45,13 +45,20 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `satus`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 0, 'Air Condition', 'AC is not good health', 'admin/add-category', 1, NULL, NULL, NULL),
-(2, 0, 'Shirts', 'Shirts is best of summer', 'admin/add-category', 1, NULL, NULL, NULL),
-(3, 0, 'Shoes', 'Shoes are necessary product for everyeone', 'admin/add-category', 1, NULL, NULL, NULL),
-(4, 2, 'Casual T-shirts', 'sub category of shirts', 'admin/add-category', 1, NULL, NULL, NULL),
-(5, 3, 'Sandals', 'Sandals is sub type of shoes', 'admin/add-category', 1, NULL, NULL, NULL),
-(6, 3, 'Sports Shoes', 'Sports shoes buy to play games', 'sports-shoes', 1, NULL, NULL, NULL),
-(7, 1, 'Dawlance', 'Dawlance\'s product are the best assumes now adays', 'dawlance', 1, NULL, NULL, NULL);
+(12, 0, 'Shoes', 'Shoes category', 'shoes', 1, NULL, NULL, NULL),
+(13, 0, 'Vehicle', 'Vehicle cateogory', 'Vehicle', 1, NULL, NULL, NULL),
+(14, 0, 'T-shirts', 'T-shirts category', 'T-shirts', 1, NULL, NULL, NULL),
+(15, 0, 'Computer Accessories', 'Computer Accessories Categorfy', 'computer-accessories', 1, NULL, NULL, NULL),
+(16, 12, 'Nike', 'Nike best shoes', 'shoes-nike', 1, NULL, NULL, NULL),
+(17, 12, 'Adidas', 'Adidas Shoes', 'shoes-adidas', 1, NULL, NULL, NULL),
+(18, 12, 'ASICS', 'ASICS shoes', 'shoes-asics', 1, NULL, NULL, NULL),
+(19, 12, 'Skechers', 'Skechers shoes', 'shoes-skechers', 1, NULL, NULL, NULL),
+(20, 13, 'Toyota Corolla', 'Toyota Corolla', 'vehicles-toyotaCorolla', 1, NULL, NULL, NULL),
+(21, 13, 'Suzuki Mehran', 'Suzuki Mehran', 'vehicle-suzukiMehran', 1, NULL, NULL, NULL),
+(22, 14, 'Charcoal', 'Charcoal t shirts', 'T-shirts-Charcoal', 1, NULL, NULL, NULL),
+(23, 14, 'Diners', 'diner t shirts', 'Tshirts-diner', 1, NULL, NULL, NULL),
+(24, 15, 'A4TECH (82)', 'A4TECH is gaming', 'computer-A4TECH', 1, NULL, NULL, NULL),
+(25, 0, 'ASUS', 'ASUS', 'computer-ASUS', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -89,7 +96,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_10_24_050154_create_category_table', 1),
-(5, '2019_11_23_011630_create_products_table', 2);
+(5, '2019_11_23_011630_create_products_table', 2),
+(6, '2019_11_24_232537_create_product_attritube_table', 3);
 
 -- --------------------------------------------------------
 
@@ -127,14 +135,26 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `category_id`, `product_name`, `product_code`, `product_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
-(1, 6, 'Nike', 'd22-22', 'white', 'Nike white shoes', 2500.00, 'cats.jpg', '2019-11-22 22:01:49', '2019-11-22 22:01:49'),
-(2, 1, 'awd', 'awd', 'ad', 'adw', 5.50, '1574481679cats.jpg', '2019-11-22 23:01:19', '2019-11-22 23:01:19'),
-(3, 1, 'awd', 'awd', 'ad', 'adw', 5.50, '1574481703cats.jpg', '2019-11-22 23:01:43', '2019-11-22 23:01:43'),
-(4, 1, 'awd', 'awd', 'ad', 'adw', 5.50, '1574481740cats.jpg', '2019-11-22 23:02:20', '2019-11-22 23:02:20'),
-(5, 3, 'Nike Joyride Run Flyknit', 'd22-22', 'white', 'Nike Joyride Run Flyknit', 2500.00, '1574481909nike.jpg', '2019-11-22 23:05:09', '2019-11-22 23:05:09'),
-(6, 3, 'Nike Joyride Run Flyknit', 'd22-22', 'white', 'Nike Joyride Run Flyknit', 2500.00, '1574482172nike.jpg', '2019-11-22 23:09:32', '2019-11-22 23:09:32'),
-(7, 3, 'Nike Joyride Run Flyknit', 'd22-22', 'white', 'Nike Joyride Run Flyknit', 2500.00, '1574482394nike.jpg', '2019-11-22 23:13:14', '2019-11-22 23:13:14'),
-(8, 3, 'Nike Joyride Run Flyknit', 'd22-22', 'white', 'Nike Joyride Run Flyknit', 2500.00, '1574482486nike.jpg', '2019-11-22 23:14:46', '2019-11-22 23:14:46');
+(1, 16, 'Nike Joyride Run Flyknit', 'aa-002', 'grey', 'Nike Joyride Run Flyknit  grey', 2500.00, '1574632990nike1.jpg', '2019-11-24 17:03:10', '2019-11-24 17:03:10'),
+(2, 16, 'Nike Joyride Run Flyknit', 'aa-001', 'black', 'Nike Joyride Run Flyknit black', 2500.00, '1574633017nike.jpg', '2019-11-24 17:03:37', '2019-11-24 17:03:37'),
+(3, 20, 'Toyoto colla xli', 'tt--001', 'white', 'Toyoto colla xli collor 2010', 14000.00, '1574633134xli.jpg', '2019-11-24 17:05:34', '2019-11-24 17:05:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_attritube`
+--
+
+CREATE TABLE `product_attritube` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `sku` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `size` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` double(8,2) NOT NULL,
+  `stock` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -197,6 +217,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product_attritube`
+--
+ALTER TABLE `product_attritube`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -211,7 +237,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -223,13 +249,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `product_attritube`
+--
+ALTER TABLE `product_attritube`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

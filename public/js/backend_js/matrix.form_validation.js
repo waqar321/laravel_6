@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+	// alert("comming here");
 	$("#current_pwd").keyup(function(){
 		var current_pwd = $("#current_pwd").val();
 		$.ajax({
@@ -214,10 +215,12 @@ $(document).ready(function(){
         return false;
 	});
 */
+	//=================================================
 	$(document).on('click','.deleteRecord',function(e){
         var id = $(this).attr('rel');
         var deleteFunction = $(this).attr('rel1');
-        swal({
+   
+    	 swal({
           title: "Are you sure?",
           text: "Your will not be able to recover this Record Again!",
           type: "warning",
@@ -231,6 +234,8 @@ $(document).ready(function(){
         });
     });
 
+
+	//=================================================
     $(document).ready(function(){
 	    var maxField = 10; //Input fields increment limitation
 	    var addButton = $('.add_button'); //Add button selector

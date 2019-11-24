@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="{{ URL('css/backend_css/fullcalendar.css') }}" />
 <link rel="stylesheet" href="{{ URL('css/backend_css/matrix-style.css') }}" />
 <link rel="stylesheet" href="{{ URL('css/backend_css/matrix-media.css') }}" />
-<!-- <link rel="stylesheet" href="{{ URL('css/backend_css/sweetalert.css') }}" /> -->
+<link rel="stylesheet" href="{{ URL('css/backend_css/sweetalert.css') }}" />
 <link href="{{ URL('css/backend_css/font-awesome.css') }}" rel="stylesheet" />
 <link rel="stylesheet" href="{{ URL('css/backend_css/jquery.gritter.css') }}" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
@@ -44,16 +44,18 @@
 <script src="{{ URL('js/backend_js/matrix.form_validation.js') }} "></script>
 <script src="{{ URL('js/backend_js/matrix.tables.js') }}"></script>
 <script src="{{ URL('js/backend_js/matrix.popover.js') }}"></script>
-<!-- <script src="{{ URL('js/backend_js/sweetalert.min.js') }}"></script> -->
+<script src="{{ URL('js/backend_js/sweetalert.min.js') }}"></script>
 <script src="{{ URL('js/backend_js/matrix.popover.js') }}"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		// alert('working');
 
-		
+
 	});
 </script>
     
