@@ -36,6 +36,7 @@ Route::get('/', function () {
 	Route::match(['get', 'post'],'admin/delete-productsImage/{id}', 'ProductsController@deleteProductImage');
 	Route::match(['get', 'post'],'admin/delete-products/{id}', 'ProductsController@deleteProduct');
 
+	Route::match(['get', 'post'],'admin/add-attribute/{id}', 'ProductsController@AddAttribute');
 	//-----------------------------------------------------------------
 
 

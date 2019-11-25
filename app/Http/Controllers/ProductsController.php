@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
+use App\ProductAttributes;
 use Auth;
 use Session;
 use Hash;
@@ -171,7 +172,7 @@ class Productscontroller extends Controller
     }
     public function viewProduct(Request $request){
     	$products = Product::get();
-    	
+
     	foreach($products as $key => $val){
     		// $key means 0 1 2 3 4 5....9
     		// $val means puri row uthao
@@ -191,6 +192,36 @@ class Productscontroller extends Controller
 				return redirect()->back()->with('status', 'Product has been deleted successfully');
 			}
     }
-     
+     public function AddAttribute(Request $request, $id=null){
+     		
+     		if($request->isMethod('post')){
+     			$data = $request->all();
+     		
+     			foreach($data['sku'] as $key => $val){
+     					if (!empty($val)) {
+						 	$ProductAttributes = new ProductAttributes();   
+						 	$ProductAttributes->product_id = $data['productID'];							
+						 	$ProductAttributes->sku = $val;							
+						 	$ProductAttributes->size = $data['size'][$key]; 							
+						 	$ProductAttributes->price = $data['price'][$key]; 							
+						 	$ProductAttributes->stock = $data['stock'][$key]; 			
+						 	$ProductAttributes->save();
+     					}
+     			}
+		 	 return redirect('admin/view-products')->with('status', "Product Attributes has been Added successfully");
+     		}
+     		
+     		$productDetail = Product::with('attributes')->where(['id' => $id])->first();  
+			/*
+	 			select firstRow from Product table where id=$id and attribute is a function in which we have define
+	    		Product has hasMany relationship with ProductAttributes table
+	    		this is gonna give output like product table and all the fields of ProductAttirubes table
+	    		integrated with the table data  
+	    	*/
+    		
+			// $productDetail_json = json_decode(json_encode($productDetail));
+    		// echo "<pre>"; print_r($productDetail_json); die;
+     		return view('admin.products.add_attributes')->with(compact('productDetail'));
+     }
 }
 
