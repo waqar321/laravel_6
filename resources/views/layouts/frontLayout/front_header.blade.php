@@ -98,7 +98,7 @@ $mainCategories = Controller::mainCategories();
 
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.html" class="active">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+								<li class="dropdown"><a href="#">Categories<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         @foreach($mainCategories as $maincat)
                                         <li><a href="{{ URL('products/'.$maincat->url) }}">{{$maincat->name}}</a></li>

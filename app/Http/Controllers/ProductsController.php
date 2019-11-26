@@ -235,17 +235,18 @@ class Productscontroller extends Controller
 	    $Categories = Category::with('categories')->where(['parent_id'=>0])->get();
 		
      	//=================================================
-		$categoryDetails = Category::where(['url'=>$url])->first();			//select * from Category where 'url'=='shoes'
+		$categoryDetails = Category::where(['url'=>$url])->first();			//select * from Category where 'url'=='shoes' return 12
+			
 		if($categoryDetails->parent_id==0){
-			//if url is main  category
+			
 			$subCategories = Category::where(['parent_id'=>$categoryDetails->id])->get();			//select * from Category where 'parent_id'=='12' 
-			$cat_ids = "";
+			$cat_ids=[];
 			foreach($subCategories as $sub_cat){
-				$cat_ids .= "==".$sub_cat->id;
+				$cat_ids[] .= $sub_cat->id;
 			}
-			$productsAll = Product::whereIn('category_id', array($cat_ids));
-	     	$a = json_decode(json_encode($productsAll));
-	     	dd($a); die;
+		
+			$productsAll = Product::whereIn('category_id', $cat_ids)->get();
+
 		}else{
 			//if url is sub category
 	     	$productsAll = Product::where(['category_id'=>$categoryDetails->id])->get(); //select * from Product where 'category_id'=='16'
