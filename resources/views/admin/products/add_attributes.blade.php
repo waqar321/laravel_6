@@ -43,10 +43,10 @@
               <div class="control-group">
                 <label class="control-label"></label>
                 <div class="controls field_wrapper">
-                  <input required title="Required" type="text" name="sku[]" id="sku" placeholder="SKU" style="width:120px;">
-                  <input required title="Required" type="text" name="size[]" id="size" placeholder="Size" style="width:120px;">
-                  <input required title="Required" type="text" name="price[]" id="price" placeholder="Price" style="width:120px;"> 
-                  <input required title="Required" type="text" name="stock[]" id="stock" placeholder="Stock" style="width:120px;">
+                  <input required type="text" name="sku[]" id="sku" placeholder="SKU" style="width:120px;">
+                  <input required type="text" name="size[]" id="size" placeholder="Size" style="width:120px;">
+                  <input required type="text" name="price[]" id="price" placeholder="Price" style="width:120px;"> 
+                  <input required type="text" name="stock[]" id="stock" placeholder="Stock" style="width:120px;">
                   <a href="javascript:void(0);" class="add_button" title="Add field">Add</a>
                 </div>
               </div>
@@ -91,7 +91,8 @@
                     <td class="center">
                       <input type="submit" value="Update" class="btn btn-primary btn-mini" />
                       <?php /* <a rel="{{ $attribute->id }}" rel1="delete-attribute" href="javascript:" class="btn btn-danger btn-mini deleteRecord">Delete</a> */ ?>
-                      <a href="{{ url('admin/delete-attribute/'.$attribute->id) }}" class="btn btn-danger btn-mini">Delete</a>
+                      <a onclick="confirm_delete_attribute()" href="{{ url('admin/delete-attribute/'.$attribute->id) }}" class="btn btn-danger btn-mini">Delete</a>
+                      <a id="delProductAttribute" onclick="confirm_delete_attribute()" href="www.google.com" class="btn btn-danger btn-mini">Google</a>
                     </td>
 
                   </tr>

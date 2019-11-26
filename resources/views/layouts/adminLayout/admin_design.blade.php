@@ -27,11 +27,6 @@
 
 @include('layouts.adminLayout.admin_footer')
 
-<script>  
-    
-
-
-</script>
 
 <script src="{{ URL('js/backend_js/jquery.min.js') }} "></script> 
 <!-- <script src="{{ URL('js/backend_js/jquery.ui.custom.js') }} "></script> --> 
@@ -54,9 +49,10 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		// alert('working');
-
-
+		
 	});
+	
+
 </script>
     
 </body>

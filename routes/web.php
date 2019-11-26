@@ -11,32 +11,47 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-	
-	Route::match(['get', 'post'],'admin/check-pwd', 'AdminController@chkPassword');
-	Route::match(['get', 'post'],'admin/update-pwd', 'AdminController@UpdatePassword');
-	
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+	//=======================================FrontEnd=======================================
+		
+	/* | */ 	Route::get('/', 'IndexController@Index');
+	/* | */		
+	/* | */
+	/* | */
+	/* | */
+	/* | */
+	/* | */
+	//=======================================FrontEnd=======================================
+	/* | */	Route::match(['get', 'post'],'admin/check-pwd', 'AdminController@chkPassword');
+	/* | */	Route::match(['get', 'post'],'admin/update-pwd', 'AdminController@UpdatePassword');	
 	//-------------------------------Login----------------------------------
-	Route::match(['get', 'post'],'admin', 'AdminController@login');
-	Route::get('admin/dashboard', 'AdminController@dashboard');
-	Route::get('admin/settings', 'AdminController@settings');
-	Route::get('logout', 'AdminController@logout');
+	/* | */	
+	/* | */	Route::match(['get', 'post'],'admin', 'AdminController@login');
+	/* | */	Route::get('admin/dashboard', 'AdminController@dashboard');
+	/* | */	Route::get('admin/settings', 'AdminController@settings');
+	/* | */	Route::get('logout', 'AdminController@logout');
+	/* | */	
 	//-------------------------------categories----------------------------------
-	Route::match(['get', 'post'],'admin/add-category', 'category_controller@add_category');
-	Route::match(['get', 'post'],'admin/view-category', 'category_controller@view_category');
-	Route::match(['get', 'post'],'admin/edit-category/{id}', 'category_controller@edit_category');
-	Route::match(['get', 'post'],'admin/delete-category/{id}', 'category_controller@delete_category');
+	/* | */	
+	/* | */	Route::match(['get', 'post'],'admin/add-category', 'category_controller@add_category');
+	/* | */	Route::match(['get', 'post'],'admin/view-category', 'category_controller@view_category');
+	/* | */	Route::match(['get', 'post'],'admin/edit-category/{id}', 'category_controller@edit_category');
+	/* | */	Route::match(['get', 'post'],'admin/delete-category/{id}', 'category_controller@delete_category');
+	/* | */	
 	//-------------------------------products----------------------------------
-	Route::match(['get', 'post'],'admin/add-products', 'ProductsController@addProduct');
-	Route::match(['get', 'post'],'admin/view-products', 'ProductsController@viewProduct');
-	Route::match(['get', 'post'],'admin/edit-products/{id}', 'ProductsController@editProduct');
-	Route::match(['get', 'post'],'admin/delete-productsImage/{id}', 'ProductsController@deleteProductImage');
-	Route::match(['get', 'post'],'admin/delete-products/{id}', 'ProductsController@deleteProduct');
-
-	Route::match(['get', 'post'],'admin/add-attribute/{id}', 'ProductsController@AddAttribute');
+	/* | */	
+	/* | */	Route::match(['get', 'post'],'admin/add-products', 'ProductsController@addProduct');
+	/* | */	Route::match(['get', 'post'],'admin/view-products', 'ProductsController@viewProduct');
+	/* | */	Route::match(['get', 'post'],'admin/edit-products/{id}', 'ProductsController@editProduct');
+	/* | */	Route::match(['get', 'post'],'admin/delete-productsImage/{id}', 'ProductsController@deleteProductImage');
+	/* | */	Route::match(['get', 'post'],'admin/delete-products/{id}', 'ProductsController@deleteProduct');
+	/* | */	Route::get('/products/{url}', 'ProductsController@products');
+	//-----------------------------------------------------------------
+	/* | */	Route::match(['get', 'post'],'admin/add-attribute/{id}', 'ProductsController@AddAttribute');
+	/* | */	Route::match(['get', 'post'],'admin/delete-attribute/{id}', 'ProductsController@DeleteAttribute');
+	/* | */	
 	//-----------------------------------------------------------------
 
 

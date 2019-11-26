@@ -213,8 +213,14 @@ $(document).ready(function(){
             return true;
         }
         return false;
-	});
-*/
+	}); 	});
+*/	
+	/*$("#delProductAttribute").click(function(){
+		if( confirm("Really Do you wanna delete attribute?");){
+            return true;
+        }
+        return false;
+	});*/
 	//=================================================
 	$(document).on('click','.deleteRecord',function(e){
         var id = $(this).attr('rel');
@@ -254,4 +260,7 @@ $(document).ready(function(){
 			        x--; //Decrement field counter
 			    });
 		});
+
+		
 });
+		
