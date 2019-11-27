@@ -41,7 +41,7 @@
               <div class="control-group">
                 <label class="control-label">Category Level</label>
                 <div class="controls">
-                  <select name="parent_id"> 
+                  <select name="parent_id"  style="width: 220px;"> 
                       <option value="0"> Main Category</option>
                       @foreach($levels as $val)
                         <option value="{{ $val->id }}" @if($val->id==$categoryDetails->parent_id) selected @endif>{{ $val->name }}</option>
@@ -57,16 +57,28 @@
                 </div>
               </div>
         	
-
               <div class="control-group">
                 <label class="control-label">URL (Start with http://)</label>
                 <div class="controls">
                   <input type="text" name="url" id="url" value="{{ $categoryDetails->url }}">
                 </div>
               </div>
+
+              <div class="control-group">
+                <label class="control-label">Select Status</label>
+                  <div class="controls">
+                      <select name="status" style="width: 220px;">
+                        <option value="{{$categoryDetails->status}}">{{ $status}}</option>
+                        <option value="{{$status_id_extra}}">{{ $status_extra}}</option>
+                      </select>
+                  </div>
+              </div>
+
+
               <div class="form-actions">
                 <input type="submit" value="Edit Category" class="btn btn-success">
               </div>
+
             </form>
           </div>
         </div>

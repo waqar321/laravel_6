@@ -28,6 +28,7 @@
                   <th>Category ID</th>
                   <th>Category Name</th>
                   <th>Category Level</th>
+                  <th>Status</th>
                   <th>Category URL</th>
                   <th>Action</th>
                 </tr>
@@ -43,6 +44,7 @@
                     @else
                         <td class="center">Sub Category</td>
                     @endif
+                  <td class="center">{{ $category->status }}</td>
                   <td class="center">{{ $category->url }}</td>
                   <td class="center">
                     <a href="{{ url('/admin/edit-category/'.$category->id) }}" class="btn btn-primary btn-mini">Edit</a> 

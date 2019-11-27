@@ -13,6 +13,7 @@
                             
                             <!-- ========================================================================  -->
                             @foreach($Categories as $cat)
+                             @if($cat->status == "1")
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
@@ -26,12 +27,15 @@
                                     <div class="panel-body">
                                         <ul>
                                              @foreach($cat->categories as $sub_cat)
-                                                 <li><a href="{{ URL('products/'.$sub_cat->url) }}"> {{ $sub_cat->name }} </a></li>
+                                                 @if($sub_cat->status == "1")
+                                                     <li><a href="{{ URL('products/'.$sub_cat->url) }}"> {{ $sub_cat->name }} </a></li>
+                                                  @endif
                                              @endforeach
                                         </ul>
                                     </div>
                                 </div>
                             </div>
+                             @endif
                             @endforeach
                         <!-- ========================================================================  -->
                            

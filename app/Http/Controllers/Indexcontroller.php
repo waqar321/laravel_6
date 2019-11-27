@@ -15,6 +15,7 @@ class Indexcontroller extends Controller
     	$productsAll = Product::orderBy('id','desc')->get();
 
     	$Categories = Category::with('categories')->where(['parent_id'=>0])->get();
+    
  		return view('index')->with(compact('productsAll','productsRandomly','Categories'));
     }
 }

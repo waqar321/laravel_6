@@ -229,7 +229,11 @@ class Productscontroller extends Controller
      }
      public function products($url=null){
      	
-
+     	//=============show 404 message=================
+     	$countCategory = Category::where(['url'=>$url])->count();
+     	if($countCategory==0){
+     		abort(404);
+     	} 
 
      	//=============only show main category=================
 	    $Categories = Category::with('categories')->where(['parent_id'=>0])->get();
@@ -242,14 +246,14 @@ class Productscontroller extends Controller
 			$subCategories = Category::where(['parent_id'=>$categoryDetails->id])->get();			//select * from Category where 'parent_id'=='12' 
 			$cat_ids=[];
 			foreach($subCategories as $sub_cat){
-				$cat_ids[] .= $sub_cat->id;
+				$cat_ids[] .= $sub_cat->id;						//select all ids in $cat_ids array
 			}
 		
-			$productsAll = Product::whereIn('category_id', $cat_ids)->get();
-
+			$productsAll = Product::whereIn('category_id', $cat_ids)->get();  //select * from Product where category_id == $cat_ids[], $cat_ids is an array
+																			 // whereIn will compare each integer value in table and display all the result 
 		}else{
 			//if url is sub category
-	     	$productsAll = Product::where(['category_id'=>$categoryDetails->id])->get(); //select * from Product where 'category_id'=='16'
+	     	$productsAll = Product::where(['category_id'=>$categoryDetails->id])->get(); 		//select * from Product where 'category_id'=='16'
 		}
      	return view('products.listing')->with(compact('categoryDetails', 'productsAll', 'Categories','sub_categories'));
 

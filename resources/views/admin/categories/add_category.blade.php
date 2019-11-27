@@ -48,7 +48,6 @@
                   <textarea name="description" id="description"> </textarea> 
                 </div>
               </div>
-        	
 
               <div class="control-group">
                 <label class="control-label">URL (Start with http://)</label>
@@ -56,6 +55,17 @@
                   <input type="text" name="url" id="url">
                 </div>
               </div>
+
+              <div class="control-group">
+                <label class="control-label">Select Status</label>
+                  <div class="controls">
+                      <select name="status" style="width: 220px;">
+                        <option value="1">Enable</option>
+                        <option value="0">Dsiable</option>
+                      </select>
+                  </div>
+              </div>
+
               <div class="form-actions">
                 <input type="submit" value="Add Category" class="btn btn-success">
               </div>
