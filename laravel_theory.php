@@ -42,7 +42,14 @@ php artisan make:controller name
 	}
 	return view('product/list', ['name' => 'James']);
 php artisan make:controller name --resource
-	
+temp:
+		 <div class="control-group">
+                <label class="control-label">Enable</label>
+                  <div class="controls">
+                       <input type="text" name="status" id="status" value="{{ $categoryDetails->status }}"> 
+                       <span class="help-inline">Note: 0 Means Disable 1 Means Enable</span> 
+                  </div>                       
+              </div>
 ===========================================Views========================================================
 project\resources\views   
 
@@ -618,6 +625,8 @@ keyboard shortkeys:
 					win+ctrl+D = new fresh deskptop
 					win+ctrl+arrow = left arrow means pichli wali desktop and right means current
 					win+ctrl+f4 =  jub koi desktop faultu hojaye to usey close karne ke liye
+					ctrl+shift+A = select all div work
+
 					win+1 = app1
 					win+2 = app2
 					win+3 = app3
@@ -947,6 +956,172 @@ erors:
 
 https://www.tutsmake.com/laravel-6-intervention-package-with-upload-image-using-ajax/
 
+e-commerce tutorial:
+
+Set Admin Dashboard | Header | Footer      						
+https://youtu.be/bzYBu0iez3s?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7  #6
+
+Display Error Message on Login Failure | Logout Process
+https://youtu.be/Y-e4vp-CqhY?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7  #7
+
+Protect Admin Routes | Secure Dashboard Route
+https://youtu.be/6kIqINVNS30?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7  #8
+
+ Settings Page | Update Password Form
+ https://youtu.be/TILCwtTtmWA?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7 #9
+
+ Check Current Password with JQuery/Ajax
+ https://youtu.be/Nn9qkHCb8GA?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7 #10
+
+ Update Admin Password
+ https://youtu.be/GFL49oZBR8g?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7  #11
+
+ Admin Panel | Categories | Migrations | CRUD
+ https://youtu.be/DpUf75HH-_o?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7  #1
+
+ Admin Panel | Display Categories with Datatables
+ https://youtu.be/-YBGa17v2MQ?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#2
+
+ Admin Panel | Edit Categories
+ https://youtu.be/2bhKD-FsCRI?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#3
+
+
+ Admin Panel | Delete Categories
+ https://youtu.be/LYfJWU3vSj0?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#4
+
+ Admin Panel | Add Sub Categories to Categories
+ https://youtu.be/vd_z8LlUhBE?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7 	#5
+
+ Admin Panel | Products Section | Laravel Migrations
+ https://youtu.be/reumQcj7jvU?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7  #6
+
+  Admin Panel | Add Product | Validations
+  https://youtu.be/VEekoRmxIjs?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#7
+
+  Admin Panel | Add Product Image | Intervention Package
+  https://youtu.be/xtBG62Ct-hc?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7 #8
+
+  Admin Panel | View Products | Datatables
+  https://youtu.be/njzUr__aEWo?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#9
+
+  Admin Panel | Product Details | Modal Pop-up
+  https://youtu.be/qBjqFVra7kQ?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#10
+
+  Admin Panel | Edit Products
+  https://youtu.be/k11fbAG-YfE?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#11
+
+ Admin Panel | Show, Update, Delete Product Images
+ https://youtu.be/MjslADxdvkI?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#12
+
+ Admin Panel | Delete Products | SweetAlert
+ https://youtu.be/0FoTmAjc4bM?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#13
+
+ SweetAlert for Categories Deletion
+ https://youtu.be/GOEl_TheF_8?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7  #14
+
+ Admin Panel | Products Attributes
+ https://youtu.be/KZ_59Nn0vuU?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#15
+
+ Admin Panel | Products Attributes
+ https://youtu.be/4P3TUkPuj5M?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#16
+
+ Admin Panel | Products Attributes
+ https://youtu.be/pe66n9d5uhg?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7   #17
+
+ Admin Panel | Products Attributes
+https://youtu.be/7XZSSXs_Y7g?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#18
+
+Products Attributes | Delete | SweetAlert
+https://youtu.be/oqeyvWTyUSE?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#19
+
+Admin Panel | Download Free E-Shop Template
+https://youtu.be/LnX9IkjFhsw?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#20
+
+ Admin Panel | Set E-Shop Template HTML in Laravel
+ https://youtu.be/O5-hF35W0d4?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#21
+
+ Admin Panel | Show Products in Home Page
+ https://youtu.be/JTd6xIH4YPs?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#22
+ 
+ Admin Panel | Display Categories at Left Sidebar
+ https://youtu.be/VGAK3JBesgY?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#23
+
+Admin Panel | Category / Listing Pages
+https://youtu.be/k18N5UpnOyM?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#24
+
+Admin Panel | Header Menu
+https://youtu.be/yB-WxuQU04o?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#25
+
+Show Sub Categories Products in Main Categories
+https://youtu.be/AkH12FA0xMU?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#26
+
+Display 404 Page | Page Not found | URL not exists
+https://youtu.be/1vIRXv58Pe8?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#27
+
+Enable/Disable Categories
+https://youtu.be/RFXBSnvhP1M?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#28
+
+ Delete Products Images from folders	
+ https://youtu.be/V0jmWlj_GWI?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#29
+
+ Product Detail Page
+ https://youtu.be/48f90gaSDKo?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#30
+
+ Product Detail Page Attributes - Size/Price
+ https://youtu.be/KA5TBbSKLRA?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7   #31
+
+Product Detail Page - Description, Care, Delivery
+https://youtu.be/O0SFDrPkQQ4?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#32
+
+Detail Page - Correct Attributes Issues | Font Awesome Path
+https://youtu.be/iS_tZ7MVD6o?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#33
+
+Products Alternate Images
+https://youtu.be/tR417H4RP_M?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#34
+
+ Admin - Products Alternate Images
+ https://youtu.be/k2u7p3zwCXI?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#35
+
+ Products Detail Page Alternate Images
+ https://youtu.be/agSRLNxRnrQ?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#36
+
+ Products Detail Page Zoom Images | Easy Zoom
+ https://youtu.be/UrGaDYYIv3Y?list=PLLUtELdNs2ZY5drPxIWzpq5crhantlzp7	#37
+
+
+//===================delete image from folder=============
+
+if(file_exists(public_path('images/backend_images/products/small/1574811011adidas_yello_shoes.jpg'))){
+
+			      unlink(public_path('images/backend_images/products/small/1574811011adidas_yello_shoes.jpg'));
+			      echo "deleted";
+
+		    }else{
+
+		      dd('File does not exists.');
+
+		    }
+			    die;
+
+$productImage = Product::where(['id'=>$id])->first();
+    		
+    		 $small_image = 'images/backend_images/products/small/';
+			 $mediun_image = 'images/backend_images/products/medium/';
+			 $large_image = 'images/backend_images/products/large/';
+
+			if(file_exists(public_path($small_image.$productImage->image))){
+			      unlink(public_path($small_image.$productImage->image));
+			}
+			if(file_exists(public_path($mediun_image.$productImage->image))){
+			      unlink(public_path($mediun_image.$productImage->image));		    
+		    }
+			if(file_exists(public_path($large_image.$productImage->image))){
+			      unlink(public_path($large_image.$productImage->image));
+			}
+		    else{
+		    		dd('File does not exists.');  die;
+		    }
+		    
 //============================Vue JS======================:
 		
 JS Libraries:
@@ -1046,6 +1221,8 @@ Now play with css:
 javascript labraries
 sweetalert();
 ajax
+video #28: 	checkbox show nahi horaha, show ho ke hide hoajta he
+
 
 
 
@@ -1098,5 +1275,11 @@ foreach($Categories as $cat){
 												</div>
 											</div>";		
 		}
+page not found:
+		location: 
+			just use function : 		 abort(404);
+			custom message: 			 vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/404.blade.php
+ 		    my dir: 			 C:\xampp\htdocs\laravel_6\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\views
 
-SU8yF3L35SH)P^P$4!#X
+//============================================================
+
