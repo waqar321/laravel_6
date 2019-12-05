@@ -184,7 +184,7 @@ class Productscontroller extends Controller
 		return view('admin.products.view-product')->with(compact('products')); 
     } 
     public function deleteProductImage(Request $request, $id=null){
-    	
+
     		$productImage = Product::where(['id'=>$id])->first();
     		
     		 $small_image = 'images/backend_images/products/small/';
@@ -201,7 +201,7 @@ class Productscontroller extends Controller
 			      unlink(public_path($large_image.$productImage->image));
 			}
 		    else{
-		    		dd('File does not exists.');  die;
+		    	return redirect()->back()->with('status', 'Image File does not exists');
 		    }
 
     		Product::where(['id'=>$id])->update(['image'=>'']);
@@ -209,10 +209,11 @@ class Productscontroller extends Controller
     }
     public function deleteProduct(Request $request, $id=null){
     		if(!empty($id)){
-				Product::where(['id'=>$id])->delete();
+				// Product::where(['id'=>$id])->delete();
 				return redirect()->back()->with('status', 'Product has been deleted successfully');
 			}
     }
+    //=======================product_Attribute_work=============================
     public function AddAttribute(Request $request, $id=null){
      		
      		if($request->isMethod('post')){
@@ -282,5 +283,21 @@ class Productscontroller extends Controller
 	     	return view('products.listing')->with(compact('categoryDetails', 'productsAll', 'Categories','sub_categories'));
 
      }
+     public function product($id=null){
+
+     	$productDetails = Product::with('attributes')->where(['id' => $id])->first();
+     	$Categories = Category::with('categories')->where(['parent_id'=>0])->get();
+     	
+     	return view('products.Detail')->with(compact('productDetails', 'Categories'));
+     }
+    public function getProductPrice(Request $request){
+    		
+    }
+	public function waqar(){
+        return view("welcome");
+    }
+	public function waqar1(){
+        return view("welcome1");
+    }
 }
 

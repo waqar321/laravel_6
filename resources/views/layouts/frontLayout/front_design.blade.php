@@ -34,12 +34,41 @@
 
     @include('layouts.frontLayout.front_footer')
     
-  
-    <script src="{{ URL('js/frontend_js/jquery.js') }}"></script>
+   <!-- ===============Version: 1.10.2===================== -->
+    <!-- <script src="{{ URL('js/frontend_js/jquery.js') }}"></script> -->
+    <script>
+        // var $x = jQuery.noConflict();
+        // alert("Version: "+$x.fn.jquery);
+    </script>
+
+   <!-- ===============Version: 1.9.1===================== -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script>
+       // var $y = jQuery.noConflict();
+       // alert("Version: "+$y.fn.jquery);
+    </script>
+   <!-- ===============Version: 2.1.3===================== -->
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+       // var $y = jQuery.noConflict();
+       // alert("Version: "+$y.fn.jquery);
+    </script>
+</head>
+
     <script src="{{ URL('js/frontend_js/bootstrap.min.js') }}"></script>
     <script src="{{ URL('js/frontend_js/jquery.scrollUp.min.js') }}"></script>
     <script src="{{ URL('js/frontend_js/price-range.js') }}"></script>
     <script src="{{ URL('js/frontend_js/jquery.prettyPhoto.js') }}"></script>
+    <script src="{{ URL('js/frontend_js/jquery.validate.js') }}"></script>
     <script src="{{ URL('js/frontend_js/main.js') }}"></script>
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+             // alert('mainjs');
+        });
+        
+
+
+    </script>
 </body>
 </html>

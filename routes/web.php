@@ -17,6 +17,14 @@
 	//=======================================FrontEnd=======================================
 		
 	/* | */ 	Route::get('/', 'IndexController@Index');
+	/* | */ 	Route::get('waqar', 'ProductsController@waqar');
+	/* | */
+	/* | */ 	Route::match(['get', 'post'],'getting-product-price', 'ProductsController@gettingProductPrice'); //product attibute price
+	/* | */ 	
+	/* | */ 	
+	/* | */ 	//login/Registers	
+	/* | */ 	Route::match(['get', 'post'],'login-register', 'users_controller@register'); //product attibute price
+	/* | */ 	
 	/* | */		
 	/* | */
 	/* | */
@@ -48,6 +56,8 @@
 	/* | */	Route::match(['get', 'post'],'admin/delete-productsImage/{id}', 'ProductsController@deleteProductImage');
 	/* | */	Route::match(['get', 'post'],'admin/delete-products/{id}', 'ProductsController@deleteProduct');
 	/* | */	Route::get('/products/{url}', 'ProductsController@products');
+	/* | */	Route::get('/product/{id}', 'ProductsController@product');  //product detail page 
+	/* | */	
 	//-----------------------------------------------------------------
 	/* | */	Route::match(['get', 'post'],'admin/add-attribute/{id}', 'ProductsController@AddAttribute');
 	/* | */	Route::match(['get', 'post'],'admin/delete-attribute/{id}', 'ProductsController@DeleteAttribute');
@@ -71,6 +81,10 @@ Route::group(['middleware'=>['auth']], function(){
 
 // Route::get('/home', 'HomeController@index')->name('home');
 // RedirectIfAuthenticated
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

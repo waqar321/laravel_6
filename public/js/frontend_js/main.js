@@ -9,6 +9,7 @@
 /*scroll to top*/
 
 $(document).ready(function(){
+// alert('awd');
 	$(function () {
 		$.scrollUp({
 	        scrollName: 'scrollUp', // Element ID
@@ -28,3 +29,65 @@ $(document).ready(function(){
 		});
 	});
 });
+$(document).ready(function(){
+	// alert('awd');
+	// Change Price with Size
+	// $("#selSize").hide();
+
+// Change Price with Size
+	$("#selSize").change(function(){
+		var idsize = $(this).val();
+		// alert(idsize);
+		if(idsize==""){
+			return false;
+		}
+
+		$.ajax({
+			type:'post',
+			url:'getting-product-price',
+			data:{idsize:idsize},
+			success:function(data){
+				
+				alert(data.success);
+
+              	// alert(data);
+             },error:function(){
+              	alert('error');
+
+      		}
+		});	
+	});
+});
+
+//validation
+/*$(document).ready(function(){
+		alert('working');
+	$("#registerForm").validate({
+		rules:{
+			name:{
+				required:true,
+				minlength:2,
+				lettersonly:true
+			},
+			password:{
+				required:true,
+				minlength:6
+			}
+			email:{
+				required:true,
+				email:true
+			}
+		},
+		messages:{
+				name: "Please Enter Your Name",
+				password:{
+						required:"Please provide your password",
+						minlength: "your password must be greater than 6"
+				},
+				email:{
+					required:"Please Enter your valid email",
+					email: "Please enter valid email"
+				}
+		}
+	});
+});*/

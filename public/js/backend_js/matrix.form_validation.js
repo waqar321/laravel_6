@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-	// alert("comming here");
+	// alert('main.js');
 	$("#current_pwd").keyup(function(){
 		var current_pwd = $("#current_pwd").val();
 		$.ajax({
@@ -208,19 +208,28 @@ $(document).ready(function(){
         return false;
 	});*/
 
-/*	$("#delProduct1").click(function(){
-		if(confirm('Are you sure to delete the Product?')){
-            return true;
-        }
-        return false;
-	}); 	});
-*/	
-	/*$("#delProductAttribute").click(function(){
-		if( confirm("Really Do you wanna delete attribute?");){
-            return true;
-        }
-        return false;
-	});*/
+	// $("#delProduct").click(function(){
+	// 	if(confirm('Are you sure to delete the Product?')){
+ //            return true;
+ //        }
+ //        return false;
+	// }); 	
+	
+	/*$("#delProduct").click(function(){
+		
+			Swal.fire('Any fool can use a computer');
+		   // if(confirm('Are you sure to delete the Product?')){
+		  //           return true;
+		  //       }
+		  //       return false;
+	}); */	
+	
+	// $("#delProduct").click(function(){
+	// 	if(confirm('Are you sure to delete the Product?')){
+ //            return true;
+ //        }
+ //        return false;
+	// });	
 	//=================================================
 	$(document).on('click','.deleteRecord',function(e){
         var id = $(this).attr('rel');

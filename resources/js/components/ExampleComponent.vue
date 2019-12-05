@@ -8,8 +8,13 @@
                     <div class="card-body">
                         I'm an example component.
                     </div>
+
                 </div>
             </div>
+        </div>
+         <div>
+            <input type="text" name="nameid">
+            <button type="button" id="btnresult">  Click </button>
         </div>
     </div>
 </template>
