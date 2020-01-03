@@ -459,7 +459,7 @@ way2 first check unique and if fail then stop here
 		    'title' => ['required', 'unique:posts', 'max:255'],
 		    'body' => ['required'],
 		]);	
-way1:
+way1: best practie
 	$validator = Validator::make($request->all(), [
 			'title' => 'required|unique:posts|max:255',
 			'email' => 'required|:posts|max:255',
